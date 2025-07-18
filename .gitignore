@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environments
+.venv/
+env/
+venv/
+
+# Checkpoints & logs
+Bert_results/checkpoint-*/
+Bert_results/runs/
+*.bin
+*.tfevents.*
+
+# System files
+.DS_Store
+
+#data
+data/*.csv
