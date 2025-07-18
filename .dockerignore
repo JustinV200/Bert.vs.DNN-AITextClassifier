@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Git and config
+.git
+.gitignore
+
+# Editor stuff
+.vscode/
+.idea/
+
+# Checkpoints and logs
+Bert_results/checkpoint*/
+Bert_results/runs/
+*.log
+
+# Local model training artifacts you don't need in container
+*.tmp
+*.tfevents.*

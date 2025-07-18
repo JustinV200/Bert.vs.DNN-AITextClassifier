@@ -1,0 +1,29 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+.venv/
+env/
+venv/
+
+# Git-related
+.git/
+.gitignore
+
+# Model checkpoints and logs you don’t want rebuilt from scratch
+Bert_results/checkpoint*/
+Bert_results/runs/
+
+# IDE and editor settings
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docker cache and other local junk
+*.log
+*.tmp
