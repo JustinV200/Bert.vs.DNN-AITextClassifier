@@ -15,6 +15,10 @@ venv/
 # Model checkpoints and logs you don’t want rebuilt from scratch
 Bert_results/checkpoint*/
 Bert_results/runs/
+*.safetensors
+*.bin
+*.keras
+
 
 # IDE and editor settings
 .vscode/
