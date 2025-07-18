@@ -1,33 +1,36 @@
-# Ignore Python cache and compiled files
+# Ignore Python artifacts
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
+*.so
 
 # Ignore virtual environments
 .venv/
 env/
-venv/
+*.env
 
-# Git-related
-.git/
-.gitignore
-
-# Model checkpoints and logs you don’t want rebuilt from scratch
-Bert_results/checkpoint*/
-Bert_results/runs/
+# Ignore model files and large artifacts
 *.safetensors
 *.bin
 *.keras
+*.h5
+*.pt
+*.pickle
+*.tfevents.*
+*.csv
+__pycache__/
+.git/
 
+# Ignore training outputs
+Bert_results/checkpoint*/
+Bert_results/runs/
+DNN_results/*.keras
+DNN_results/*.pickle
 
-# IDE and editor settings
-.vscode/
-.idea/
-
-# OS junk
+# OS + editor files
 .DS_Store
-Thumbs.db
+.idea/
+.vscode/
 
-# Docker cache and other local junk
-*.log
-*.tmp
+# Git files
+.git/
