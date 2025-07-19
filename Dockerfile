@@ -6,7 +6,9 @@ ENV PYTHONUNBUFFERED 1
 
 # Create working directory
 WORKDIR /app
-
+# Copy model files
+COPY DNN_results/ DNN_results/
+COPY Bert_results/ Bert_results/
 # Install dependencies
 COPY requirements.txt ./
 RUN pip install --upgrade pip
