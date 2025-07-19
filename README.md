@@ -21,9 +21,9 @@ A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
 ## Live Demo:
 
-Visit the hosted site here:  https://bert-vs-dnn-aitextclassifier-555399477095.europe-west1.run.app/
+Visit the hosted site here:  
 
-🔗 **Web App**: 
+🔗 **Web App**: https://bert-vs-dnn-aitextclassifier-555399477095.europe-west1.run.app/
 
 ## Features:
 
