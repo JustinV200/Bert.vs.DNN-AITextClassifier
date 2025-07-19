@@ -6,6 +6,8 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import re
 import torch.nn.functional as F
+import os
+from flask import Flask, request, render_template
 app = Flask(__name__)
 
 # Load models and tokenizers once at startup
@@ -60,4 +62,5 @@ def index():
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)

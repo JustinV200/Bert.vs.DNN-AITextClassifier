@@ -9,28 +9,22 @@ __pycache__/
 env/
 *.env
 
-# Ignore model files and large artifacts
-*.safetensors
-*.bin
-*.keras
-*.h5
-*.pt
-*.pickle
+# Ignore training checkpoints and junk
 *.tfevents.*
-*.csv
-__pycache__/
-.git/
-
-# Ignore training outputs
 Bert_results/checkpoint*/
 Bert_results/runs/
-DNN_results/*.keras
-DNN_results/*.pickle
+
+# Ignore unused training scripts
+TextClassifierBERT.py
+TextClassifierDNN.py
+
+#dont need the data
+ *.csv
 
 # OS + editor files
 .DS_Store
 .idea/
 .vscode/
 
-# Git files
+# Git
 .git/
