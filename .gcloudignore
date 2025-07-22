@@ -1,3 +1,4 @@
+# .gcloudignore
 # Ignore Python artifacts
 __pycache__/
 *.py[cod]
@@ -11,8 +12,8 @@ env/
 
 # Ignore training checkpoints and junk
 *.tfevents.*
-Bert_results/checkpoint*/
-Bert_results/runs/
+#Bert_results/checkpoint*/
+#Bert_results/runs/
 
 # Ignore unused training scripts
 TextClassifierBERT.py

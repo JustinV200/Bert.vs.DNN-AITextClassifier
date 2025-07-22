@@ -1,3 +1,4 @@
+#.dockerignore
 # Python cache
 __pycache__/
 *.pyc
@@ -17,10 +18,11 @@ venv/
 .idea/
 
 # Checkpoints and logs
-Bert_results/checkpoint*/
-Bert_results/runs/
+#Bert_results/checkpoint*/
+#Bert_results/runs/
 *.log
-
+#data
+*.csv
 # Local model training artifacts you don't need in container
 *.tmp
 *.tfevents.*
