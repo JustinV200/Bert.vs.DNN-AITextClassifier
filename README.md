@@ -17,9 +17,9 @@ This project compares a traditional Deep Neural Network (DNN) and a Transformer-
 
 A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
-🔗 **Dataset Source**: 
+🔗 **Dataset Source**: *pending
 
-## Live Demo: *pending
+## Live Demo: 
 
 Visit the hosted site here:  
 
