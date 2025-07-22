@@ -34,7 +34,7 @@ Visit the hosted site here:
 
 ## ⚠️ Disclaimer:
 
-This tool is for educational purposes only. The models may yield false positives/negatives and should not be used for serious academic or forensic judgments.\
+This tool is for educational purposes only. The models may yield false positives/negatives and should not be used for serious academic or forensic judgments.
 
 ## Getting Started:
 
