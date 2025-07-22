@@ -4,7 +4,7 @@ This project compares a traditional Deep Neural Network (DNN) and a Transformer-
 
 ## Tech Stack:
 
-- **Frontend**: HTML (Jinja2 templating via Flask)
+- **Frontend**: HTML
 - **Backend**: Python, Flask
 - **Machine Learning**:
   - TensorFlow + Keras (for DNN)
