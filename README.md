@@ -19,11 +19,11 @@ A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
 🔗 **Dataset Source**: 
 
-## Live Demo:
+## Live Demo: *pending
 
 Visit the hosted site here:  
 
-🔗 **Web App**: https://bert-vs-dnn-aitextclassifier-555399477095.europe-west1.run.app/
+🔗 **Web App**: *pending
 
 ## Features:
 
@@ -32,7 +32,7 @@ Visit the hosted site here:
 - Educational disclaimer about classifier limitations
 - Dockerized for easy deployment
 
-##⚠️ Disclaimer:
+## ⚠️ Disclaimer:
 
 This tool is for educational purposes only. The models may yield false positives/negatives and should not be used for serious academic or forensic judgments.\
 
