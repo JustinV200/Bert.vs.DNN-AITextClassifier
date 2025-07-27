@@ -16,3 +16,6 @@ steps:
 
 images:
   - 'gcr.io/$PROJECT_ID/ai-detector'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
