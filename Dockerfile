@@ -25,4 +25,4 @@ EXPOSE 8080
 RUN ls -la /app
 
 # Run the app
-CMD ["gunicorn", "-b", ":8080", "app:app"]
+CMD ["gunicorn", "-b", ":8080", "main:app"]
