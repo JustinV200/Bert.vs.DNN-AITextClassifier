@@ -17,7 +17,7 @@ steps:
         '--memory',
         '16Gi',
         '--timeout',
-        '60s',
+        '3600s',
         '--concurrency',
         '1',
         '--allow-unauthenticated'
