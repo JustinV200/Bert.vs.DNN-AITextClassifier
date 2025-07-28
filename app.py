@@ -8,7 +8,10 @@ import re
 import torch.nn.functional as F
 import os
 from flask import Flask, request, render_template
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 # Load models and tokenizers once at startup
 dnn_model = load_model('DNN_results/ai_vs_human_classifier.keras')
@@ -61,6 +64,3 @@ def index():
         result = compare_models(text)
     return render_template('index.html', result=result)
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8080))
-    app.run(host='0.0.0.0', port=port)
