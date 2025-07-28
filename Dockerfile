@@ -21,5 +21,8 @@ COPY . .
 # Expose port 8080 (required by Cloud Run)
 EXPOSE 8080
 
+#for debugging purposes
+RUN ls -la /app
+
 # Run the app
 CMD ["gunicorn", "-b", ":8080", "app:app"]
