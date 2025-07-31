@@ -17,13 +17,13 @@ This project compares a traditional Deep Neural Network (DNN) and a Transformer-
 
 A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
-🔗 **Dataset Source**: *pending
+🔗 **Dataset Source**: https://www.kaggle.com/datasets/shanegerami/ai-vs-human-text
 
 ## Live Demo: 
 
 Visit the hosted site here:  
 
-🔗 **Web App**: *pending
+🔗 **Web App**: [CLICK ME TO VISIT!](https://bert-vs-dnn-aitextclassifier-555399477095.us-central1.run.app/)
 
 ## Features:
 
