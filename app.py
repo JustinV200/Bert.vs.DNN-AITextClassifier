@@ -1,5 +1,4 @@
 try:
-    print("🚀 app.py is importing...")
 
     import torch
     import pickle
@@ -16,19 +15,15 @@ try:
     app = Flask(__name__)
     CORS(app)
 
-    print("✅ Flask instance created")
 
     # Load models and tokenizers once at startup
     dnn_model = load_model('DNN_results/ai_vs_human_classifier.keras')
-    print("✅ DNN model loaded")
 
     with open('DNN_results/tokenizer.pickle', 'rb') as f:
         dnn_tokenizer = pickle.load(f)
-    print("✅ DNN tokenizer loaded")
 
     bert_tokenizer = BertTokenizer.from_pretrained('Bert_results')
     bert_model = BertForSequenceClassification.from_pretrained('Bert_results')
-    print("✅ BERT model loaded")
 
     def clean_text(text):
         text = text.lower()
@@ -69,5 +64,5 @@ try:
 
 except Exception as e:
     import sys
-    print("❌ Exception occurred during app startup:", e, file=sys.stderr)
+    print("Exception occurred during app startup:", e, file=sys.stderr)
     raise
