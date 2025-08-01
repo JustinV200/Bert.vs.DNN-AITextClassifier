@@ -29,7 +29,6 @@ Visit the hosted site here(See Disclaimer and TODO's):
 
 - DNN and BERT predictions side-by-side
 - Confidence/logits shown for transparency
-- Educational disclaimer about classifier limitations
 - Dockerized for easy deployment
 
 ## ⚠️ Disclaimer:
