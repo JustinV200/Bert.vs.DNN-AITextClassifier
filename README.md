@@ -23,7 +23,7 @@ A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
 Visit the hosted site here(See Disclaimer and TODO's):  
 
-🔗 **Web App**: [CLICK ME TO VISIT!](https://bert-vs-dnn-aitextclassifier-555399477095.us-central1.run.app/)
+🔗 **Web App**: [Live Web App](https://bert-vs-dnn-aitextclassifier-555399477095.us-central1.run.app/)
 
 ## Features:
 
@@ -36,9 +36,11 @@ Visit the hosted site here(See Disclaimer and TODO's):
 
 This tool is for educational purposes only. The models may yield false positives/negatives and should not be used for serious academic or forensic judgments.
 
-## ⚠️ TODO's:
+## ⚠️ TODOs:
 
-Currently working to retrain models for better accuracy, as currently, I find it assumes text is human-written a vast majority of the time, even when very obviously AI. I believe this is due to overfitting, as accuracy is very high on the training data, but seems to be low elsewhere.
+Currently working to retrain models for better accuracy, as currently, I find it assumes text is human-written a vast majority of the time, even when very obviously AI. I believe this is due to overfitting, as accuracy is very high on the training data, but seems to be low elsewhere. 
+
+Note: Retraining BERT requires significant computational time and resources, so I’ve been working within available constraints to make incremental improvements
 
 ## Getting Started:
 
