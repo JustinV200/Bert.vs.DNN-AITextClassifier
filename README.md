@@ -17,24 +17,29 @@ This project compares a traditional Deep Neural Network (DNN) and a Transformer-
 
 A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
-🔗 **Dataset Source**: *pending
+🔗 **Dataset Source**: https://www.kaggle.com/datasets/shanegerami/ai-vs-human-text
 
 ## Live Demo: 
 
-Visit the hosted site here:  
+Visit the hosted site here(See Disclaimer and TODO's):  
 
-🔗 **Web App**: *pending
+🔗 **Web App**: [Live Web App](https://bert-vs-dnn-aitextclassifier-555399477095.us-central1.run.app/)
 
 ## Features:
 
 - DNN and BERT predictions side-by-side
 - Confidence/logits shown for transparency
-- Educational disclaimer about classifier limitations
 - Dockerized for easy deployment
 
 ## ⚠️ Disclaimer:
 
 This tool is for educational purposes only. The models may yield false positives/negatives and should not be used for serious academic or forensic judgments.
+
+## ⚠️ TODOs:
+
+Currently working to retrain models for better accuracy, as currently, I find it assumes text is human-written a vast majority of the time, even when very obviously AI. I believe this is due to overfitting, as accuracy is very high on the training data, but seems to be low elsewhere. 
+
+Note: Retraining BERT requires significant computational time and resources, so I’ve been working within available constraints to make incremental improvements
 
 ## Getting Started:
 
