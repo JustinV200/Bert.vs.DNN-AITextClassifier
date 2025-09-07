@@ -19,4 +19,4 @@ Bert_results/runs/
 .DS_Store
 
 #data
-data/*.csv
+#data/*.csv

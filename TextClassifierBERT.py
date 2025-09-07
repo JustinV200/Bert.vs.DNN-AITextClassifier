@@ -1,3 +1,4 @@
+#9/7/2025
 #AI vs Human Text Classifier using TensorFlow (Binary Classification) 
 #Using a Transformer-based BERT model for text classification
 # Made to determine between human and AI written text
@@ -29,13 +30,15 @@ import csv
 
 # Clean data, remove extra spaces, make everything lowercase, remove punctuation, special characters, and HTML tags just in case
 # same as in DNN model
+
+#update 9/7/2025: limiting cleaning to just potential html tags, as other factors can be relevant context for classification
 def clean_data(text):
     #everything should be lowercase:
-    text = text.lower()
+    #text = text.lower()
     # Remove extra spaces
-    text = ' '.join(text.split())
+    #text = ' '.join(text.split())
     # Remove punctuation and special characters
-    text = ''.join(char for char in text if char.isalnum() or char.isspace())
+    #text = ''.join(char for char in text if char.isalnum() or char.isspace())
     # Remove HTML tags or any artifacts
     text = re.sub(r'<[^>]+>', '', text)
 
@@ -46,13 +49,13 @@ def prepare_dataset(texts, labels):
     # Create a pandas DataFrame
     df = pd.DataFrame({'text': texts, 'label': labels})
     dataset = Dataset.from_pandas(df)
-    dataset = dataset.train_test_split(test_size=0.2)  # Split into train and test sets
+    dataset = dataset.train_test_split(test_size=0.2, stratify_by_column="label", seed=42)
     return dataset
 
 
 #prepare the tokenizer and apply it to the dataset
 def tokenizedata(data, tokenizer):
-    return tokenizer(data['text'], padding="max_length", truncation=True, max_length=300)
+    return tokenizer(data['text'], padding="max_length", truncation=True, max_length=512) #increased to berts max length of 512, as much context as possible will hopefully increase accuracy
 
 
 # Define evaluation metrics and return them
@@ -68,14 +71,20 @@ def train_model(tokenized_dataset, compute_metrics, tokenizer):
     model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
 
     training_args = TrainingArguments(
-    output_dir="./Bert_results",
-    eval_strategy="epoch",
-    save_strategy="epoch",
-    learning_rate=2e-5,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
-    num_train_epochs=3,
-    weight_decay=0.01,
+        output_dir="./Bert_results",
+        evaluation_strategy="epoch",     
+        save_strategy="epoch",
+        load_best_model_at_end=True,
+        metric_for_best_model="f1",
+        greater_is_better=True,
+        learning_rate=2e-5,
+        per_device_train_batch_size=16,
+        per_device_eval_batch_size=16,
+        num_train_epochs=4,               
+        warmup_ratio=0.1,              
+        weight_decay=0.01,
+        logging_steps=50,
+        seed=42,
 )
     
     trainer = Trainer(
@@ -101,7 +110,7 @@ def train_model(tokenized_dataset, compute_metrics, tokenizer):
 def predict_text(model, tokenizer, text: str) -> str:
     #clean the text data
     cleaned = clean_data(text)
-    tokens = tokenizer(cleaned, padding="max_length", truncation=True, max_length=300, return_tensors="pt")
+    tokens = tokenizer(cleaned, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
 
     model.eval()
     with torch.no_grad():
@@ -155,19 +164,11 @@ def main():
 
     # Tokenize the dataset
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    tokenized_dataset = dataset.map(lambda x: tokenizedata(x, tokenizer), batched=True)
+    tokenized_dataset = dataset.map(lambda x: tokenizedata(x, tokenizer), batched=True, remove_columns=['text'])
+    tokenized_dataset = tokenized_dataset.rename_column("label", "labels")
+    tokenized_dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels']) 
     # Train and save the model
     train_model(tokenized_dataset, computemetrics, tokenizer)
-
-    #reload and predict on the same text used in the DNN
-    model = BertForSequenceClassification.from_pretrained("./Bert_results")
-    tokenizer = BertTokenizer.from_pretrained("./Bert_results")
-
-    # Predict sample, this is the same text used in the DNN model, written by me a few years ago should be human(as I am a human, last i checked)
-    sample_text = """
-    As grateful as I am today to receive this award, the title of “Eagle Scout” is one of the least important things I have gotten out of my scouting career. Rather it is the trials and tribulations I went through, and their permanent effect on my character that was the real important takeaway.
-    """
-    predict_text(model, tokenizer, sample_text)
 
 if __name__ == "__main__":
     main()

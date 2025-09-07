@@ -26,3 +26,5 @@ venv/
 # Local model training artifacts you don't need in container
 *.tmp
 *.tfevents.*
+#testing stuff
+test_model.py
