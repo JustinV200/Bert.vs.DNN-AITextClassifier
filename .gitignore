@@ -20,3 +20,6 @@ Bert_results/runs/
 
 #data
 #data/*.csv
+submit_jobs
+*.out
+*.err

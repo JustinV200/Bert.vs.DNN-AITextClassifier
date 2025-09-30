@@ -49,7 +49,7 @@ def prepare_dataset(texts, labels):
     # Create a pandas DataFrame
     df = pd.DataFrame({'text': texts, 'label': labels})
     dataset = Dataset.from_pandas(df)
-    dataset = dataset.train_test_split(test_size=0.2, stratify_by_column="label", seed=42)
+    dataset = dataset.train_test_split(test_size=0.2, seed=42)
     return dataset
 
 
@@ -169,7 +169,7 @@ def main():
     tokenized_dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels']) 
     # Train and save the model
     train_model(tokenized_dataset, computemetrics, tokenizer)
-
+    print("success")
 if __name__ == "__main__":
     main()
 
