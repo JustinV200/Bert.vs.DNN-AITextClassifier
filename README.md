@@ -23,7 +23,7 @@ A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
 Visit the hosted site here(See Disclaimer and TODO's):  
 
-🔗 **Web App**: [Live Web App](https://bert-vs-dnn-aitextclassifier-555399477095.us-central1.run.app/)
+🔗 **Web App**: **took this down, run locally to try it out, currently focusing efforts to optomize models with keystroke synthesis, see other repo, also found dataset to be heavily flawed and am looking to redo with something entirely new**
 
 ## Features:
 
@@ -37,9 +37,7 @@ This tool is for educational purposes only. The models may yield false positives
 
 ## ⚠️ TODOs:
 
-Currently working to retrain models for better accuracy, as currently, I find it assumes text is human-written a vast majority of the time, even when very obviously AI. I believe this is due to overfitting, as accuracy is very high on the training data, but seems to be low elsewhere. 
-
-Note: Retraining BERT requires significant computational time and resources, so I’ve been working within available constraints to make incremental improvements
+built and prove accuracy of keystroke synthesizer(see other repo), find new dataset, retrain.
 
 ## Getting Started:
 
