@@ -23,7 +23,7 @@ A CSV of ~487,000 samples labeled as either AI-generated or human-written.
 
 Visit the hosted site here(See Disclaimer and TODO's):  
 
-🔗 **Web App**: **took this down, run locally to try it out, currently focusing efforts to optomize models with keystroke synthesis, see other repo, also found dataset to be heavily flawed and am looking to redo with something entirely new**
+🔗 **Web App**: **took this down, run locally to try it out, currently focusing efforts to optimize models with keystroke synthesis, see other repo, also found dataset to be heavily flawed and am looking to redo with something entirely new**
 
 ## Features:
 
