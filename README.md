@@ -39,6 +39,8 @@ This tool is for educational purposes only. The models may yield false positives
 
 built and prove accuracy of keystroke synthesizer(see other repo), find new dataset, retrain.
 
+May be an overfitting issue as well, gonna look into this after keystroke synthesizer is working well.
+
 ## Getting Started:
 
 ```bash
